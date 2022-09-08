@@ -22,10 +22,9 @@ class Queue {
   }
 
   dequeue() {
-    const removeNode = this.front;
-
     if (this.size === 0) return null;
 
+    const removeNode = this.front;
     this.front = removeNode.next;
     if (removeNode.next === null) {
       this.back = null;
@@ -34,8 +33,7 @@ class Queue {
 
     return removeNode.value;
   }
-}
-
+} // time complexity 0(1), space complexity 0(n)
 const queue = new Queue();
 queue.enqueue("a");
 queue.enqueue("b");
