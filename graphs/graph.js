@@ -8,19 +8,71 @@ const edges = [
   ["D", "E"],
 ];
 
-// Find Adjecent Nodes
-const findAdjecentNodes = (node) => {
-  // loop through edges array
-  // if my node is in the connection
-  // if yes , push the other node in pair, into adjacentNodes array
-  // if no , keep looking
+const adjacency = new Map();
 
-  const AdjecentNodes = [];
+vertices.forEach((elem) => {
+  adjacency.set(elem, []);
+});
 
-  for (let edge of edges) {
+edges.forEach(([key, value]) => {
+  adjacency.get(key).push(value);
+});
+
+// {
+//   'A' => [ 'B', 'D' ],
+//   'B' => [ 'C' ],
+//   'C' => [ 'D', 'E' ],
+//   'D' => [ 'E' ],
+//   'E' => []
+// }
+
+// depthFirstSearch
+const depthFirstSearch = (graph, sourceNode) => {
+  const stack = [sourceNode];
+
+  const set = new Set();
+
+  while (stack.length > 0) {
+    const current = stack.pop();
+    console.log(current);
+
+    for (let neighbour of graph.get(current)) {
+      if (neighbour && !set.has(neighbour)) {
+        set.add(neighbour);
+        stack.push(neighbour);
+      }
+    }
   }
-
-  return AdjecentNodes;
 };
+// depthFirstSearch(adjacency, "A");
 
-//is Connected two nodes
+const depthFirstRecursion = (graph, sourceNode, set = new Set()) => {
+  console.log(sourceNode);
+
+  for (let neighbour of graph.get(sourceNode)) {
+    if (neighbour && !set.has(neighbour)) {
+      set.add(neighbour);
+      depthFirstRecursion(graph, neighbour, set);
+    }
+  }
+};
+// depthFirstRecursion(adjacency, "A");
+
+const breadthFirstTreversal = (graph, node) => {
+  const queue = [node];
+
+  const set = new Set();
+
+  while (queue.length > 0) {
+    const current = queue.shift();
+    console.log(current);
+
+    for (let neighbour of graph.get(current)) {
+      if (!set.has(neighbour)) {
+        set.add(neighbour);
+        queue.push(neighbour);
+      }
+    }
+  }
+};
+breadthFirstTreversal(adjacency, "A");
