@@ -30,4 +30,21 @@ const hasPath = (graph, src, dst) => {
   depthFirst(src);
   return flag ? true : false;
 };
-console.log(hasPath(graph, "v", "z"));
+// console.log(hasPath(graph, "v", "z"));
+
+//❤️ better way
+const visited = new Set();
+const isPath = (graph, src, dst) => {
+  if (src === dst) return true;
+
+  for (let neighbour of graph[src]) {
+    if (!visited.has(neighbour)) {
+      visited.add(neighbour);
+      if (isPath(graph, neighbour, dst)) return true;
+    }
+  }
+
+  return false;
+};
+console.log(isPath(graph, "y", "w"));
+//time complexity 0(n), space complexity 0(n)
