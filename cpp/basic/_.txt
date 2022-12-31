@@ -1,0 +1,7 @@
+### 
+Abstruct data type: It has definitions of data and operations but do not have implementation details.
+
+###
+Algorithm: A pocess or set of rules to be followed in calculatons or other problem-solving operations.
+The instructions are finite , which carried in a specific order to perform a specific task.
+

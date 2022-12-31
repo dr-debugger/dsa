@@ -1,0 +1,3 @@
+****
+stack is a linear data structure which operates in a LIFO (Last in First Out) or FILO (First in Last Out) pattern.
+Its an abstruct data type with a bounded (predefined) capacity.
