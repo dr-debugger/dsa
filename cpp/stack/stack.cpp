@@ -1,5 +1,4 @@
 #include<iostream>
-#include<string>
 using namespace std;
 
 class Stack{
@@ -38,11 +37,18 @@ class Stack{
     void push(int item);
     void pop();
     bool isEmpty(void);
+    int peek(int pos);
+    void changeAt(int pos, int val);
+
     int topElem(){
       if(top > -1){
       return arr[top];
       }
       cout << "stack is already empty" << endl;
+    }
+
+    int itemCount(){
+      return (top + 1);
     }
 
     ~Stack(){
@@ -53,6 +59,19 @@ class Stack{
 
 };
 
+void Stack:: changeAt(int pos, int val){
+  if(top > -1 && pos <= top)
+      arr[pos] = val;
+}
+
+int Stack:: peek(int pos){
+  if(top > -1 && pos <= top){
+      return arr[pos];
+  }
+
+  return 0;
+} 
+
 void Stack :: diaplayStackItem(){
   if(top > -1){
       for (int i = 0; i < top + 1; i++){
@@ -60,7 +79,7 @@ void Stack :: diaplayStackItem(){
       }
       return;
   }
-  cout << "stack is already empty" << endl;
+  isEmpty();
 }
 
 void Stack :: push(int item){
@@ -76,10 +95,14 @@ void Stack :: pop(){
       return;
   }
 
- cout << "stack is already empty" << endl;
+  isEmpty();
 };
 
 bool Stack::isEmpty(){
+  if(top < 0)
+      cout << "Stack is Empty" << endl;
+  if(top > -1)
+      cout << "Stack isnt Empty" << endl;
   return top < 0;
 };
 
@@ -98,13 +121,9 @@ int main(){
   a.push(17);
   a.push(100);
   a.pop();
+  a.changeAt(1, 1000);
 
   a.diaplayStackItem();
-  // if(a.isEmpty() == 1){
-  //     cout << "stack empty" << endl;
-  // }else{
-  //     cout << "not empty" << endl;
-  // }
 
   return 0;
 }
