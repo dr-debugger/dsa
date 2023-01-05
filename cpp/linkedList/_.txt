@@ -1,0 +1,8 @@
+***
+A Linked list is a linear data structure, in which the elements are not store in contiguous memory location.
+
+every element are called node, where node contains a data field and a reference to the next node in the list.
+
+
+###
+singly linked list:
