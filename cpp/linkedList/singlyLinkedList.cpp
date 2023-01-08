@@ -77,14 +77,18 @@ class SinglyLinkedList{
       }
       return false;
     }
-   
+
+    void insertAtSpecifiPos(int pos, int val, int newKey);
+
     void display(){
       Node *temp = head;
       while (temp != nullptr)
       {
-        cout << temp->data << endl;
+        cout <<"Node at "<< temp->key<< " is "<< temp->data << endl;
         temp = temp->next;
       }
+
+      cout << "end ****" << endl;
     }
 
     ~SinglyLinkedList(){
@@ -92,6 +96,33 @@ class SinglyLinkedList{
     }
 
 };
+
+void SinglyLinkedList:: insertAtSpecifiPos(int pos, int val, int newKey){
+    Node *New_node = new Node(newKey, val);
+
+    Node *temp = head;
+
+    if(head != nullptr && pos == head->key){
+      head = New_node;
+      head->next = temp;
+      return;
+    }
+
+    Node *prev = head;
+
+    while (temp != nullptr)
+    {
+      if(temp->key == pos){
+        New_node->next = temp;
+        prev->next = New_node;
+        return;
+      }
+      prev = temp;
+      temp = temp->next;
+    }
+
+    cout << "invalid position" << endl;
+}
 
 int main(){
     SinglyLinkedList a;
@@ -102,9 +133,11 @@ int main(){
     a.addNode(95, 5);
 
     a.display();
-    a.serchNodeBykey(3);
-    a.removeNode(3);
-    a.addNode(950, 6);
+    // a.serchNodeBykey(3);
+    // a.removeNode(3);
+    // a.addNode(950, 6);
+
+    a.insertAtSpecifiPos(4, 50, 6);
     a.display();
 
     return 0;
