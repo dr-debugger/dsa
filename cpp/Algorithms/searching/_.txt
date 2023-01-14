@@ -1,0 +1,6 @@
+****
+There is mainly two types of searching :
+
+1. Sequential Search : list ar array traversed sequentially and every element is checked.
+
+2. Interval Search : unlike sequential search , these algorithms usally work on sorted data structures. these are more efficient than linear / sequential search.
