@@ -21,13 +21,16 @@ public:
 
 class CircularLinkedList{
   Node *head;
-  public:
+  Node *getLastNode();
+
+public:
   CircularLinkedList(){
     head = nullptr;
   }
     void addNode(int k, int v);
     Node* getNode(int key);
     void displayNodes();
+    bool removeNode(int key);
     bool isEmpty(){
       return head == nullptr;
     }
@@ -92,13 +95,64 @@ void CircularLinkedList :: displayNodes(){
 
 }
 
+
+bool CircularLinkedList :: removeNode(int k){
+  if(isEmpty()){
+    return false;
+  };
+
+  Node *curr = head;
+
+  if(curr->next == head){ // if there is only one node
+    head = nullptr;
+    delete curr;
+    return true;
+  }
+
+
+
+  Node *prev = curr;
+  curr = curr->next;
+
+  while (curr != head)
+  {
+    if(curr->key == k){
+      prev->next = curr->next;
+      delete curr;
+      return true;
+    }
+    prev = curr;
+    curr = curr->next;
+  }
+
+  return false;
+}
+
+Node * CircularLinkedList :: getLastNode(){
+  if(isEmpty()){
+    return nullptr;
+  };
+
+  Node *temp = head;
+  while (temp->next != head)
+  {
+    temp = temp->next;
+  }
+
+  return temp;
+}
+
 int main(){
 
   CircularLinkedList a;
   a.addNode(1, 10);
-  a.addNode(2, 30);
-  a.addNode(3, 20);
+  // a.addNode(2, 30);
+  // a.addNode(3, 20);
 
+  a.displayNodes();
+
+  cout << "------" << endl;
+  cout << a.removeNode(1) << endl;
   a.displayNodes();
 
   return 0;
