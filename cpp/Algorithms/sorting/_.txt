@@ -1,0 +1,9 @@
+****
+sorting algorithms: A sorting algorith is used to rearrange a given array oe list element(s) according to a particular pattern( ascending or descending order ).
+
+*** we need sorting for :
+1 Efficient sorting is important for optimizing the efficiency of other algorithms (such as search or merge), which required input data in sorted lists.
+2 It is easier and faster to locate items in a sorted list.
+
+*** types of sorting :
+Selection sort, bubble sort, insertion sort, merge sort, quick sort, heap sort, redix sort etc. 
