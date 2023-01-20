@@ -17,6 +17,9 @@ void swap(int &a, int &b){
 
 void selectionSort(int arr[], int size){
   int minIndex, i, j;
+
+// get the lowest (or highest , depending on the order) number on the unsorted list, and swap it with the element of current index [i]
+
   for (i = 0; i < size - 1; i++){
     minIndex = i;
     for (j = i + 1; j < size; j++){
