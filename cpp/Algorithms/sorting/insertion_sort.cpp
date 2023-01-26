@@ -6,19 +6,18 @@ void insertionSort(int arr[], int size){
   if(size == 1)
     return;
 
-    
   int i, j, val;
 
   for ( i = 1; i < size; i++)
   {
-    val = arr[i];
+    val = arr[i]; // storing the value in a temporary variable
 
-    for (j = i - 1; j >= 0 && arr[j] > val; j--)
+    for (j = i - 1; j >= 0 && arr[j] > val; j--) // if the temporary value is the lower
     {
       arr[j + 1] = arr[j];
     }
 
-    arr[j + 1] = val;
+    arr[j + 1] = val; // till arr[j] values are sorted
   }
 }
 
@@ -31,7 +30,7 @@ void displayArr(int arr[], int s){
 }
 
 int main(){
-  int arr[5] = {4, 11, 8, 9, 5};
+  int arr[5] = {10, 11, 8, 3, 5};
 
   insertionSort(arr, 5);
   displayArr(arr, 5);

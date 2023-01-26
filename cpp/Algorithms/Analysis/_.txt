@@ -1,0 +1,27 @@
+###
+Algorithm Analysis - is a study to provides theoretical estimation for the required resources of an algorithm to solve a specific computation problem i.e. calculating efficiency.
+
+Generally , the efficiency an algorith is related to the input length (number of steps), known as TIME complexity, volume of memory, known as SPACE complexity.
+
+
+###
+Asymptotic Algorithm Analysis - is a method of defining the mathematical of its run-time performance.
+
+using the Asymptotic Analysis , we can easily estimate about the estimate casescenario of an algorithm. In simple words, it is used to mathematically calculate the running time of any operation inside an algorithm.
+
+Asymptotic Analysis is used to estimate the time-complexity function for an arbitrarily large input.
+
+
+###
+Time Complexity: is a computational way to show how(behavior) runtime of a program changes as the size of the input changes.
+
+###
+The Big O Notation is the formal / mathematical way to express the upper bound (worst case) of an algorithm's run-time.
+
+The simple steps are to find the Big O Notation easily: 
+1  Find the fasted growing variable term.
+2  Eliminate the co-efficients / constant terms.
+
+
+
+*** Note: Algorithm Analysis does not give you acurate / exact values (time ,space etc), however it gives estimates which can be used to study the behavior of the algorith.
