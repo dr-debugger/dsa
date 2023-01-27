@@ -1,0 +1,18 @@
+###
+Tree - is a non-linear data-structure that simulates a hiarchial tree structure with a root value & subtrees of children with parent node, represent as set of linked nodes.
+
+> Terminology :
+Root - root is a special node in a tree. The entire tree is referenced through it. It doesnt have any parent.
+Parent Node - is a Immediate predecessor of a node.
+Child Node - All Immediate successor of a node are its children.
+Siblings - Nodes with the same parent are called siblings.
+Leaf - Last node of a tree.
+Edge - The connection between two nodes or a node and a leaf.
+Path - path is a nmber of successor edges from source node to destination node.
+Degree of Node - Degree of a node is equal to number of children. Also the maximum number of children also called degree of a node.
+
+Depth of Node - represents the number of edges from the tree's root node to the perticular node.
+Height of Node - is the number of edges on the longest path between node and leaf.
+Height of tree - is the height of its root node.
+
+In a valid N nodes we have N-1 nodes.
