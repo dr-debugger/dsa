@@ -71,6 +71,7 @@ int main(){
 /**
  * Merge sort is a divide and conquer algorithm.
  * Time complexity O(nlog(n))
+ * Space complexity O(n) 
  * 
  * 
  * Declare left variable to 0 and right variable to n-1 

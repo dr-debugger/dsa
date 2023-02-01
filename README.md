@@ -1,15 +1,16 @@
 # dsa
 ⚔️Data Structures and Algorithms in JavaScript and C++
 
-## Topic Coverd: 
-**Data Structure**
+## 🙅‍♂️Topic Coverd: 
+
+**🔥Data Structure**
 * Linear 
     * Stack
     * Queue
     * Linked List
 
 
-**Algorithms**
+**🍻Algorithms**
 
 * Searching
   * Binary Search
