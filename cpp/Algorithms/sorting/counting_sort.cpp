@@ -50,7 +50,7 @@ int main(){
 
   int *sortedArr;
 
-  countingSort(arr, size, 9);
+  countingSort(arr, size, 10); // range from 0-9
 
   cout << "displaying" << endl;
   displayArr(arr, size);
