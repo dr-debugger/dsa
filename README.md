@@ -22,6 +22,8 @@
   * Insertion Sort
   * Merge Sort
   * Bubble Sort
+  * Counting Sort
+  * Redix Sort
 
 
 
