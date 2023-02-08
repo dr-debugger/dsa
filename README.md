@@ -8,6 +8,8 @@
     * Stack
     * Queue
     * Linked List
+    * Trees
+      * Binary Search Tree
 
 
 **🍻Algorithms**
