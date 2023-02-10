@@ -79,7 +79,7 @@ int main(){
       }
 
       case 2: {
-
+        
         break;
       }
 
@@ -153,10 +153,8 @@ void Tree :: printvalues(Node *temp){
   printvalues(temp->right);
 }
 
-
 /**
  * @brief 
- * depth first traversal -> pre order, post order
- * breadh first traversal -> level order
+ * In BST in-order traversal retrieves the nodes in ascending sorted order
  * 
  */
