@@ -35,6 +35,9 @@ public:
   bool isTreeEmpty();
   Node* insertNode(int value, Node *temp = nullptr);
   void printvalues(Node *temp);
+  Node *searchNode_iteration(int val);
+  Node *searchNode_recursion(int val, Node *node);
+  int getHeight(Node *n);
 };
 
 // global friend function
@@ -79,7 +82,23 @@ int main(){
       }
 
       case 2: {
-        
+        int val;
+         cout << "Enter the value: ";
+        cin >> val;
+
+        // recursive approch
+        Node *n = bst.searchNode_recursion(val, bst.getRoot());
+
+        // iteration approch
+        // Node *n = bst.searchNode_iteration(val);
+
+        if(n != nullptr){
+          cout << "The value is: " << n->value << endl;
+        }else{
+          cout << "no value found" << endl;
+        }
+
+
         break;
       }
 
@@ -151,6 +170,65 @@ void Tree :: printvalues(Node *temp){
   cout << temp->value << " ";
 
   printvalues(temp->right);
+}
+
+
+Node* Tree :: searchNode_iteration(int val){
+  if(isTreeEmpty()){
+     return root;
+  }
+
+  Node *temp = root;
+  while (temp != nullptr){
+    if(val == temp->value){
+          return temp;
+    }
+
+    if(val < temp->value){
+          temp = temp->left;
+    }else{
+          temp = temp->right;
+    }
+
+  }
+
+  // if no node found, return null;
+  return nullptr;
+}
+
+
+Node * Tree :: searchNode_recursion(int val, Node *node){
+  if(node == nullptr || node->value == val){
+    return node;
+  }
+
+  if(val < node->value){
+    return searchNode_recursion(val, node->left);
+  }else{
+    return searchNode_recursion(val, node->right);
+  }
+ // complexity O(logn)
+}
+
+int Tree :: getHeight(Node *root)
+{
+  // if there is only on node, height will be 0;
+  // negative value represent that the tree or subTree is empty
+
+  if(isTreeEmpty()){
+    return -1;
+  }
+
+  int l_Height = getHeight(root->left);
+  int r_height = getHeight(root->right);
+
+  if(l_Height > r_height){
+    return (l_Height + 1);
+  }
+    
+  return (r_height + 1);
+
+
 }
 
 /**

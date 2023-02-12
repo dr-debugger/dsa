@@ -2,6 +2,7 @@
 #include<string>
 using namespace std;
 
+#define SPACE 5
 
 class Node{
   public:
@@ -26,13 +27,82 @@ class Tree {
       root = nullptr;
   }
 
+  Node* getRoot(){
+      return root;
+  }
 
+  bool isTreeEmpty(){
+      return root == nullptr;
+  }
+
+  void addNode(int value);
+  void print_2D_tree_on_terminal(Node *n, int space);
 };
 
 int main(){
-  
+  Tree tree;
+  tree.addNode(100);
+  tree.addNode(80);
+  tree.addNode(30);
+  tree.addNode(90);
+  tree.addNode(20);
+
+  // tree.print_2D_tree_on_terminal(tree.getRoot(), 5);
+
   return 0;
 }
+
+
+void Tree::addNode(int value){
+  Node *newNode = new Node(value);
+
+  if(isTreeEmpty()){
+      root = newNode;
+      return;
+  }
+
+  Node *temp = root;
+  Node *prev;
+  while (true){
+    prev = temp;
+
+    if (value < temp->value){
+      temp = temp->left;
+      if(temp == nullptr){
+        prev->left = newNode;
+        return;
+      }
+    }else{
+      temp = temp->right;
+      if(temp == nullptr){
+        prev->right = newNode;
+        return;
+      }
+    }
+  }
+}
+
+
+void Tree:: print_2D_tree_on_terminal(Node *n, int space){
+  if(n == nullptr){
+    return;
+  }
+
+  space += SPACE;
+
+  print_2D_tree_on_terminal(n->right, space);
+
+  cout << endl;
+
+  for (int i = SPACE; i < space; i++)
+  {
+    cout << " ";
+  }
+
+  cout << n->value << endl;
+  print_2D_tree_on_terminal(n->left, space);
+}
+
 
 /**
  * @brief

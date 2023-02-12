@@ -47,4 +47,4 @@ const isPath = (graph, src, dst) => {
   return false;
 };
 console.log(isPath(graph, "y", "w"));
-//time complexity 0(n), space complexity 0(n)
+//time complexity O(n), space complexity O(n)
