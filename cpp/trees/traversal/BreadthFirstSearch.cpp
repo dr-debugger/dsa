@@ -21,8 +21,9 @@ class Node{
 
 class Tree {
   Node *root;
-  
-  public:
+  void printLevelOrder(Node *n, int level);
+
+public:
   Tree(){
       root = nullptr;
   }
@@ -37,6 +38,8 @@ class Tree {
 
   void addNode(int value);
   void print_2D_tree_on_terminal(Node *n, int space);
+  int getHeight(Node *node);
+  void breadthFirst(Node *node);
 };
 
 int main(){
@@ -48,6 +51,7 @@ int main(){
   tree.addNode(20);
 
   // tree.print_2D_tree_on_terminal(tree.getRoot(), 5);
+  tree.breadthFirst(tree.getRoot());
 
   return 0;
 }
@@ -103,6 +107,40 @@ void Tree:: print_2D_tree_on_terminal(Node *n, int space){
   print_2D_tree_on_terminal(n->left, space);
 }
 
+int Tree :: getHeight(Node *node)
+{
+   if (node == nullptr)
+        return 0;
+  else {
+       
+    int lheight = getHeight(node->left);
+    int rheight = getHeight(node->right);
+ 
+  
+    if (lheight > rheight) {
+      return (lheight + 1);
+    }
+      
+     return (rheight + 1); 
+  }
+}
+
+void Tree :: printLevelOrder(Node *node, int level){
+  if (node == nullptr) return;
+
+  if (level == 1) cout << node->value << " ";
+
+  else if (level > 1) {
+      printLevelOrder(node->left, level - 1);
+      printLevelOrder(node->right, level - 1);
+  }
+}
+
+void Tree:: breadthFirst(Node *node){
+  int height = getHeight(node);
+  int i;
+  for (i = 1; i <= height; i++) printLevelOrder(node, i);
+} 
 
 /**
  * @brief
