@@ -3,7 +3,7 @@
  * its bigger than 0(n) but smaller than 0(n^2)
  */
 
-//❤️ex1
+// ️ex1
 const bar = (str) => {
   console.log(str);
   if (str.length <= 1) return "base";
@@ -21,7 +21,7 @@ const bar = (str) => {
 };
 // bar("ghjedghwjegdwehjdgewjhdgewhjd");
 
-//❤️ex2
+// ️ex2
 const foo = (arr) => {
   let str = "";
 

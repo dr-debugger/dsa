@@ -10,7 +10,7 @@
  * 0(n!)        factorial
  */
 
-//❤️ex1
+// ️ex1
 const f = (m, n) => {
   for (let i = 0; i < m; i++) {
     console.log("m");
@@ -21,7 +21,7 @@ const f = (m, n) => {
   }
 }; // complexity : 0(m+n)
 
-//❤️ex2
+// ️ex2
 const crossPairs = (arr1, arr2) => {
   for (let i = 0; i < arr1.length; i++) {
     for (let j = 0; j < arr2.length; j++) {
@@ -30,7 +30,7 @@ const crossPairs = (arr1, arr2) => {
   }
 }; // complexity : 0(m*n)
 
-//❤️ex3
+// ️ex3
 const foo = (str1, str2) => {
   if (str1.length > str2.length) {
     for (let i = 0; i < str1.length; i++) {

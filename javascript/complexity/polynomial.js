@@ -3,7 +3,7 @@
  * 2. 0(n^2) [quadratic], 0(n^3) [cubic] , etc falls in this family
  */
 
-// ❤️ex1
+//  ️ex1
 const bar = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length; j++) {
@@ -13,7 +13,7 @@ const bar = (arr) => {
 };
 // bar(["a", "b", "c"]);
 
-//❤️ex2
+// ️ex2
 const foo = (str) => {
   if (str.length === 0) return console.log("base");
 

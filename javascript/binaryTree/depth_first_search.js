@@ -49,17 +49,17 @@ const recurseDepthFirst = (node) => {
   recurseDepthFirst(node.right);
   recurseDepthFirst(node.left);
 }; // time => 0(n); space => 0(n)
-// ❤️ its a pre - order trevarsal cause we print out parent before both children => self -> right -> left
+//  ️ its a pre - order trevarsal cause we print out parent before both children => self -> right -> left
 // recurseDepthFirst(a);
 
 /**
  * Three traversal for depth_first _search
  * 1. pre - order => self -> right -> left
- * 2.❤️post - order => left -> right -> self
- * 3 .❤️in - order => left -> self -> right
+ * 2. ️post - order => left -> right -> self
+ * 3 . ️in - order => left -> self -> right
  */
 
-// ❤️ ex : return the sum of all nodes;
+//  ️ ex : return the sum of all nodes;
 let sum = 0;
 const returnSum = (node) => {
   if (!node) return 0;

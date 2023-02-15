@@ -45,7 +45,7 @@ function printTree(tree) {
 }
 // console.log(printTree(a));
 
-// ❤️another approch
+// another approch
 const breadthFirst = (root) => {
   const queue = [root];
 
@@ -60,7 +60,7 @@ const breadthFirst = (root) => {
 }; // in this approch if you want to track level , it will be
 // breadthFirst(a);
 
-// ❤️ search perticular item in a tree
+//  search perticular item in a tree
 const searchItem = (root, item) => {
   const queue = [root];
 

@@ -32,7 +32,7 @@ const hasPath = (graph, src, dst) => {
 };
 // console.log(hasPath(graph, "v", "z"));
 
-//❤️ better way
+// ️ better way
 const visited = new Set();
 const isPath = (graph, src, dst) => {
   if (src === dst) return true;

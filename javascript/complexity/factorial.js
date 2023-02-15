@@ -1,4 +1,4 @@
-//❤️ex1
+// ️ex1
 const foo = (n) => {
   if (n === 1) return;
 
