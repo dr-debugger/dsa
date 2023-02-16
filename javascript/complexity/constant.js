@@ -1,4 +1,4 @@
-// ❤️ex 1
+//  ️ex 1
 const foo = (n) => {
   let result = 0;
   for (let i = 0; i < 5; i++) {
@@ -9,7 +9,7 @@ const foo = (n) => {
 console.log(foo(4));
 // time complexity 0(5) ~ where we can simply say, its 0(1)
 
-//❤️ex 2
+// ️ex 2
 const bar = (arr) => {
   return arr[0] + arr[arr.length - 1];
 };

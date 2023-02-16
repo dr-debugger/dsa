@@ -7,7 +7,7 @@
  * if no base provided in mathematics common base would be 10; and in computer it would be 2
  */
 
-//❤️ex 1
+// ️ex 1
 const fun = (n) => {
   let step = 0;
   while (n > 1) {
@@ -19,7 +19,7 @@ const fun = (n) => {
 // fun(16);
 // complexity would be 0(log(n)) ; base is two
 
-// ❤️ex2
+//  ️ex2
 const foo = (n) => {
   if (n <= 1) return console.log("end");
   console.log(n);

@@ -10,6 +10,11 @@
     * Linked List
     * Trees
       * Binary Search Tree
+        * Insertion
+        * Deletion
+        * Level order search
+        * Depth first search
+
 
 
 **🍻Algorithms**

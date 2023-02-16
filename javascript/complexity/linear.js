@@ -1,4 +1,4 @@
-// ❤️ex1
+//  ️ex1
 let foo = (arr) => {
   // arr.length > 0
   for (let i = 0; i < arr.length; i++) {

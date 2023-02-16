@@ -1,4 +1,4 @@
-/** ❤️ex1
+/**  ️ex1
  * write a function 'sum' that takes anarray of numbers as an input.
  * the function sholud return the total sum of all elements
  */
