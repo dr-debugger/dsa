@@ -3,26 +3,43 @@
 #include <cmath>
 using namespace std;
 
-void swap(int &a, int &b){
-  int temp = a;
-  a = b;
-  b = temp;
-}
 
 void shellSort(int arr[], int size){
-  // initial gap
-  int gap = floor(size / 2);
-  for (int i = gap; i > 0; i /= 2)
+
+  for (int gap = floor(size / 2); gap > 0; gap = floor(gap/2))
   {
-    
+    for (int j = gap; j < size; j++)
+    {
+      int temp = arr[j];
+      int i = 0;
+
+      for (i = j; i >= gap && arr[i - gap] > temp; i -= gap)
+      {
+        arr[i] = arr[i - gap];
+      }
+
+      arr[i] = temp;
+    }
+  }
+  
+}
+
+void displayArr(int arr[], int s){
+  for (int i = 0; i < s; i++)
+  {
+    cout << arr[i] << " ";
   }
   
 }
 
 
 int main(){
-  
-  return 0;
+   int arr[6] = {4, 11, 8, 90, 5, 20};
+
+   shellSort(arr, 6);
+   displayArr(arr, 6);
+
+   return 0;
 }
 
 /**
