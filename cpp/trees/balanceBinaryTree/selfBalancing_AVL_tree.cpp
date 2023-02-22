@@ -21,11 +21,15 @@ class Node{
 class Tree{
     Node *root;
 
-    
+    bool isTreeEmpty(){
+      return root == nullptr;
+    }
     public:
     Tree(){
       root = nullptr;
     }
+
+    Node* inserNode(int value, Node *r);
 };
 
 int main(){
@@ -33,9 +37,30 @@ int main(){
   return 0;
 }
 
+Node* Tree :: inserNode (int value, Node *r){
+  if(isTreeEmpty()){
+      return root = new Node(value);
+  }
+
+  if(r == nullptr){
+    return new Node(value);
+  }
+
+  if(value > r->value){
+    r->right = inserNode(value, r->right);
+  }
+
+  if(value < r->value){
+    r->left = inserNode(value, r->left);
+  }
+
+  return r;
+}
+
 /**
  * @brief
  * AVL tree is a self-balancing Binary Search Tree (BST) where the difference between heights of left and right subtree cannot be more than one, for all nodes;
  * 
+ * The rebalancing is done using Rotation of a binary search tree
  * 
  */
