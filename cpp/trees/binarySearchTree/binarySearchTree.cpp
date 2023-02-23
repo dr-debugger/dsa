@@ -19,6 +19,7 @@ class Node{
 
 class Tree{
   Node *root;
+  Node *findMin(Node *n);
 
 public:
   Tree()
@@ -38,6 +39,7 @@ public:
   Node *searchNode_iteration(int val);
   Node *searchNode_recursion(int val, Node *node);
   int getHeight(Node *n);
+  Node* deleteNode(Node* r,int value);
 };
 
 // global friend function
@@ -103,7 +105,10 @@ int main(){
       }
 
       case 3: {
-
+        int val;
+         cout << "Enter the value: ";
+        cin >> val;
+        bst.deleteNode(bst.getRoot(), val);
         break;
       }
 
@@ -231,8 +236,65 @@ int Tree :: getHeight(Node *root)
 
 }
 
+
+Node* Tree:: findMin(Node *n){
+  Node *temp = n;
+  // its a binary search tree , so further most left side value , will be the smallest value
+  while (temp->left != nullptr){
+    temp = temp->left;
+  }
+  return temp;
+}
+
+Node* Tree:: deleteNode(Node* r,int value){
+  if(r == nullptr)
+    return r;
+  
+  if(value < r->value){
+    r->left = deleteNode(r->left, value);
+    return r;
+  }
+  if(value > r->value){
+    r->right = deleteNode(r->right, value);
+    return r;
+  }
+
+  // if value mathes
+  if(r->left == nullptr){
+    Node *temp = r->right;
+    delete r;
+    return temp;
+  }
+  if(r->right == nullptr){
+    Node *temp = r->left;
+    delete r;
+    return temp;
+  }
+
+  Node *temp = findMin(r->right);
+  r->value = temp->value;
+  r->right = deleteNode(r->right, temp->value);
+  return r;
+}
+
 /**
- * @brief 
+ * @brief
  * In BST in-order traversal retrieves the nodes in ascending sorted order
- * 
+ *
+ * ### Delete Node:
+ * ** for leaf node or node with 1 child:
+ * 1. Terverse to the leaf node / node with single child, that to be deleted. (lets called it n)
+ * 2. Check if n has left child, if it doesnt then link the right child of n to its parent node.
+ * 3. if n has a left child, then check if it has a right child or not.
+ * if it has a right child then it falls into to secenario where we have to consider another algorithm to delete the node
+ * 4. if it only have left child then link the left child as its parent node left child.
+ *
+ * ** for node with 2 children:
+ * 1. Traverse to the node with 2 children which need to be deleted(n).
+ * 2. find the smallest node in the right sub tree of n.
+ * or
+ * 3. find the largestnode in the left subtree of n.
+ * 4. replace this node (min or max) with the node to be deleted.
+ * 5. now delete min or mix node using the delete process again. 
+ *
  */
