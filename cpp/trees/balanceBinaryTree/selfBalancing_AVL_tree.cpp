@@ -29,7 +29,7 @@ class Tree{
       root = nullptr;
     }
 
-    Node* inserNode(int value, Node *r);
+    Node* insertNode(int value, Node *r);
 };
 
 int main(){
@@ -37,7 +37,7 @@ int main(){
   return 0;
 }
 
-Node* Tree :: inserNode (int value, Node *r){
+Node* Tree :: insertNode (int value, Node *r){
   if(isTreeEmpty()){
       return root = new Node(value);
   }
@@ -47,11 +47,11 @@ Node* Tree :: inserNode (int value, Node *r){
   }
 
   if(value > r->value){
-    r->right = inserNode(value, r->right);
+    r->right = insertNode(value, r->right);
   }
 
   if(value < r->value){
-    r->left = inserNode(value, r->left);
+    r->left = insertNode(value, r->left);
   }
 
   return r;
