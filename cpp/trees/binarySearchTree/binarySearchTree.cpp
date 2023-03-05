@@ -30,7 +30,7 @@ public:
   // friend void setvalueOnRoot(Tree &tree, Node *value);
 
   Node* getRoot(){ // getter
-      return root;
+    return root;
   }
 
   bool isTreeEmpty();

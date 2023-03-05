@@ -6,7 +6,6 @@ class Node{
   public:
     int value;
     Node *left, *right;
-
     Node(){
       value = 0;
       left = right = nullptr;
@@ -28,15 +27,40 @@ class Tree{
     Tree(){
       root = nullptr;
     }
+    Node* getRoot(){ // getter
+      return root;
+    }
 
-    
+    Node *insertNode(Node *r, int val);
 };
 
 int main(){
-  
-  return 0;
+
+    Tree AVL;
+    AVL.insertNode(AVL.getRoot(), 40);
+
+    return 0;
 }
 
+Node* Tree :: insertNode(Node* r, int val){
+  if(isTreeEmpty()){
+    return root = new Node(val);
+  }
+  if(r == nullptr){
+      Node *node = new Node(val);
+      r = node;
+      return r;
+  }
+
+  if(val < r->value){
+      r->left = insertNode(r->left, val);
+  }else if(val > r->value){
+      r->right = insertNode(r->right, val);
+  }else{
+      return r;
+  }
+  return r;
+};
 
 /**
  * @brief
