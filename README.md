@@ -32,6 +32,12 @@
   * Counting Sort
   * Redix Sort
 
+  **Other**
+  * Expression
+    * Infix
+    * Prefix
+    * Postfix
+
 
 
         
