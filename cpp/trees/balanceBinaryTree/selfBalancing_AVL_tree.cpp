@@ -70,7 +70,7 @@ Node* Tree :: insertNode(Node* r, int val){
  * 
  * 
  * The balance factor of a binary tree is: 
- * Height of left sub-tree - Height of right sub-tree {which have to be in range od -1, 0, 1}
+ * Height of left sub-tree - Height of right sub-tree {which have to be in range of -1, 0, 1}
  * 
  * 
  */
